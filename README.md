@@ -1,2 +1,10 @@
-# curso-java-solid-alura
-💻 Código do curso "SOLID com Java: princípios da programação orientada a objetos" da Alura
+## 💻 Curso: SOLID com Java: princípios da programação orientada a objetos
+
+- Código do curso "OLID com Java: princípios da programação orientada a objetos" da Alura
+
+## :books: Conteúdos
+ - 
+ - 
+ - 
+
+☑️ Curso feito com o objetivo de ...
