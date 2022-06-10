@@ -1,4 +1,4 @@
-package br.com.lucio.service;
+package br.com.lucio.service.reajuste;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -15,7 +15,7 @@ public class ValidarPeriodicidadeEntreReajustes implements ValidacaoReajuste {
 		LocalDate dataAtual = LocalDate.now();
 		long mesesDesdeUltimoReajuste = ChronoUnit.MONTHS.between(dataUltimoReajuste, dataAtual);
 		if(mesesDesdeUltimoReajuste < 6) {
-			throw new ValidacaoException("Intervalo entre reajustes deve ser de no mínimo 6 meses");
+			throw new ValidacaoException("Intervalo entre reajustes deve ser de no mï¿½nimo 6 meses");
 		}
 	}
 	

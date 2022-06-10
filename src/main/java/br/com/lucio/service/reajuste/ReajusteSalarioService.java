@@ -1,4 +1,4 @@
-package br.com.lucio.service;
+package br.com.lucio.service.reajuste;
 
 import java.math.BigDecimal;
 import java.util.List;
