@@ -3,64 +3,40 @@ package br.com.lucio.model;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import lombok.Data;
+
+@Data
 public class Funcionario {
 
-	private String nome;
-	private String cpf;
-	private Cargo cargo;
-	private BigDecimal salario;
-	private LocalDate dataUltimoReajuste;
+	private DadosPessoais dadosPessoais;
 
-	public Funcionario(String nome, String cpf, Cargo cargo, BigDecimal salario) {
-		this.nome = nome;
-		this.cpf = cpf;
-		this.cargo = cargo;
-		this.salario = salario;
+	public Funcionario(String nome, String cpf, Cargo cargo, BigDecimal salario, LocalDate dataUltimoReajuste, String empresaTerceirizada) {
+		this.dadosPessoais = new DadosPessoais(nome, cpf, cargo, salario, dataUltimoReajuste);
 	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
+	
+	public void atualizarSalario(BigDecimal novoSalario) {
+		this.dadosPessoais.setSalario(novoSalario);
+		this.setDataUltimoReajuste(LocalDate.now());
 	}
 
 	public Cargo getCargo() {
-		return cargo;
+		return this.dadosPessoais.getCargo();
 	}
-
-	public void setCargo(Cargo cargo) {
-		this.cargo = cargo;
-	}
-
+	
 	public BigDecimal getSalario() {
-		return salario;
+		return this.dadosPessoais.getSalario();
 	}
-
-	public void atualizarSalario(BigDecimal novoSalario) {
-		this.salario = novoSalario;
-		this.dataUltimoReajuste = LocalDate.now();
-	}
-
+	
 	public LocalDate getDataUltimoReajuste() {
-		return dataUltimoReajuste;
+		return this.dadosPessoais.getDataUltimoReajuste();
 	}
 
 	public void setDataUltimoReajuste(LocalDate dataUltimoReajuste) {
-		this.dataUltimoReajuste = dataUltimoReajuste;
+		this.dadosPessoais.setDataUltimoReajuste(dataUltimoReajuste);
 	}
 
 	public void promover(Cargo novoCargo) {
-		this.cargo = novoCargo;
+		this.dadosPessoais.setCargo(novoCargo);
 	}
 
 }
