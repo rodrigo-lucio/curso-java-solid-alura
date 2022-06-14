@@ -39,6 +39,25 @@ public class ReajusteSalarioService {
 	* apenas criamos uma nova classe e implementamos a interface
 	* 
 	* Essa regra no solid vale para classes, módulos, funções, etc.
+	* 
+	* 
+	* 3) Para não termos que ficar instanciando todas as implementações da interface ValidacaoReajuste
+	* ex: ValidarPercentualReajusteSalario validacao1 = new ValidarPercentualReajusteSalario();
+	*     ValidarPeriodicidadeEntreReajustes validacao2 = new ValidarPeriodicidadeEntreReajustes();
+	*     
+	* Passamos para o nosso construtor recebeber essa lista de implementaçoes da interface X.
+	* Dependendo de interfaces e não de implementações Assim não quebramos o I do SOLID.
+	* Dependency Inversion Principlev = Principio da inversão de dependência
+	* Ou seja, invertemos a dependencia para que ela nao seja instanciada no validador     
+	* Referenciamos a interface no construtor
+	* Nao sabemos quais e quantas classes serao passadas para o List do contrutor
+	* A classe não depende de outras classes concretas/implementações.
+	* Classes são coisas que mexemos o tempo inteiro, e interface não. Costuma mudar menos e ser mais estável.
+	* 
+	* Geralmente quando implementamos o O do Solid, já somos induzidos a implementar o S e o D juntos.
+	* Separando a responsabilidade e invertendo a dependencia.
+	* 
+	* 
 	*/
 	
 	
